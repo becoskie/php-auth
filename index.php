@@ -3,11 +3,6 @@
     $conn = dbConnect();
     $page_title = "Test Auth";
     
-    if ($conn) {
-        $message = "Good Job!!!";
-    } else {
-        $message = "Try again";
-    }
 ?>
 <?php include("includes/header.php"); ?>
 
