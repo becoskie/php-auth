@@ -1,1 +1,11 @@
 h1 {color: rgb(55,56,59);}
+
+.req_message {
+    font-style: italic;
+    color: rgba(231, 76, 60, 1);
+    font-size: .75rem;
+}
+
+.req_message::before,  .req_message::after{ 
+    content: " *** ";
+  }
