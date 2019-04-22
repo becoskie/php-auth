@@ -30,5 +30,26 @@ function generate_salt($length) {
     return $salt;
 }
 
+function attempt_login($username, $password) {
+    $user = find_client_by_username($username);
+    if ($user) {
+        if (password_check($password, $user['hashed_password'])) {
+        return $user;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+    
+}
 
+function password_check($password, $existing_hash) {
+    $hash = crypt($password, $existing_hash);
+    if ($hash === $existing_hash) {
+        return true;
+    } else {
+        return false;
+    }
+}
 ?>
