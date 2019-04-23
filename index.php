@@ -3,6 +3,7 @@
 <?php 
   $page_title = "Login Page";
   $message = "";
+  $user = [];
   if(isset($_POST['submit'])) {
     $user = attempt_login($_POST["username_input"], $_POST["password"]);
     if($user) {
@@ -14,6 +15,7 @@
   ?>
 <?php include("includes/header.php"); ?>
 <section class="col-4">
+  <?php print_r($user); ?>
 <form id="login_user" method="post" action="" name="login_form"> 
   <h1><?php echo($message); ?></h1>
   <div class="form-group" id="username">
