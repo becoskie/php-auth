@@ -1,23 +1,26 @@
+<?php ob_start( );?>
 <?php include("includes/connections.php")?>
 <?php include('includes/functions.php');?>
 <?php 
+  session_start();
   $page_title = "Login Page";
   $message = "";
-  $user = [];
   if(isset($_POST['submit'])) {
     $user = attempt_login($_POST["username_input"], $_POST["password"]);
     if($user) {
-      $message = "User info here";
+      $_SESSION['user_id'] = $user['user_id'];
+      $_SESSION['username'] = $user['username'];
+      $_SESSION['user_type'] = $user['user_type'];
+      login_redirect($_SESSION['user_id'], $_SESSION['user_type']);
     } else {
-      $message = "No info here";
+      $message = "Username/password not found.";
     }
   }
   ?>
 <?php include("includes/header.php"); ?>
 <section class="col-4">
-  <?php print_r($user); ?>
 <form id="login_user" method="post" action="" name="login_form"> 
-  <h1><?php echo($message); ?></h1>
+  <h5><?php echo($message); ?></h5>
   <div class="form-group" id="username">
     <label for="username_input">User Name</label>
     <input type="text" class="form-control" id="username_input" aria-describedby="name" name="username_input" value="" placeholder="Enter User Name">
