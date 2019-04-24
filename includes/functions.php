@@ -19,6 +19,11 @@ function test_input($data) {
     return $data;
   }
 
+  function admin_redirect_to($new_location) {
+    header("Location: " . $new_location);
+    exit;
+}
+
   function password_encrypt($password) {
     $hash_format = "$2y$10$";
     $salt_length = 22;
@@ -72,4 +77,17 @@ function password_check($password, $existing_hash) {
         return false;
     }
 }
+
+function logged_in() {
+    return isset($_SESSION['user_id']);
+}
+
+function login_redirect($user_id, $user_type) {
+    if (logged_in() && $user_type == "admin") {
+        admin_redirect_to("admin.php");
+    } else {
+        admin_redirect_to("user.php");
+    }
+    
+}	
 ?>
