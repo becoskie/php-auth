@@ -10,5 +10,8 @@
 <section class="col-4">
 <h1>Admin Page</h1>
 <p>good job.</p>
+<ul>
+  <li class="menu_item"><a href="logout.php" class="logout">Log Out</a></li>
+</ul>
 </section>
 <?php include("includes/footer.php"); ?>
