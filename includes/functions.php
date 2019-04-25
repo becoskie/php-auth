@@ -92,13 +92,20 @@ function login_redirect($user_id, $user_type) {
 }
 function confirm_login() {
     if (!logged_in()) {
-        admin_redirect_to('http://www.becoskie.com/login.php');
+        admin_redirect_to('index.php');
     }
 }
 
 function admin_only() {
     $admin_ok = array("admin");
     if (logged_in() && !in_array($_SESSION['user_type'], $admin_ok)) {
+        admin_redirect_to("index.php");
+    }
+}
+
+function user_approved() {
+    $user_ok = ["admin", "user"];
+    if (logged_in() && !in_array($_SESSION['user_type'], $user_ok)) {
         admin_redirect_to("index.php");
     }
 }

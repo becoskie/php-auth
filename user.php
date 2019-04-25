@@ -1,10 +1,11 @@
 <?php ob_start( );?>
+<?php session_start(); ?>
 <?php include("includes/connections.php")?>
 <?php include('includes/functions.php');?>
+<?php confirm_login();?>
+<?php user_approved(); ?>
 <?php 
-  session_start();
   $page_title = "User Page";
-  
   ?>
 <?php include("includes/header.php"); ?>
 <section class="col-4">
