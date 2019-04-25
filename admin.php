@@ -1,8 +1,11 @@
 <?php ob_start( );?>
+<?php session_start(); ?>
 <?php include("includes/connections.php")?>
 <?php include('includes/functions.php');?>
+<?php confirm_login();?>
+<?php admin_only(); ?>
+
 <?php 
-  session_start();
   $page_title = "Admin Page";
   
   ?>
