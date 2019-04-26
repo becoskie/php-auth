@@ -8,6 +8,8 @@ $( document ).ready(function() {
 
     });
 }); //don't delete!!!!!
+
+
 function validateFormInput() {
     console.log($(".admin_val").val());
     const forms = document.querySelectorAll('form');
@@ -19,10 +21,10 @@ function validateFormInput() {
         if(input.type != "submit" && input.type != "radio" && input.value === "") {
         not_empty = false;
         let input_id = `#${input.id}`;
-        let containing_div_text = input.id.split("_").pop();
-        let containg_div_id = `#${containing_div_text}_input`;
-        $(input_id).css('background-color', 'rgba(243, 156, 18, .7)');
-        $(containg_div_id).append(`<p class="req_message">${containing_div_text} required.</p>`);
+        $(input_id).css('background-color', 'rgba(252, 92, 101, .3)');
+        // $(input_id).addClass("form_error");
+        $(input_id).parent().append(`<p class="req_message">Required</p>`);
+
         }
     });
     return not_empty;

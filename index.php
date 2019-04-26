@@ -19,7 +19,7 @@
   ?>
 <?php include("includes/header.php"); ?>
 <section class="col-4">
-<form id="login_user" method="post" action="" name="login_form"> 
+<form id="login_user" method="post" action="" name="login_form" onsubmit="return validateFormInput()"> 
   <h5><?php echo($message); ?></h5>
   <div class="form-group" id="username">
     <label for="username_input">User Name</label>
