@@ -1,37 +1,50 @@
-## Welcome to GitHub Pages
+# Basic PHP Authorization and Login
 
-You can use the [editor on GitHub](https://github.com/becoskie/php-auth/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Create and route a user set by privileges. Password encryption and validation checks.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+### Prerequisites
+MYSQL  
+PHP  
+```
+Change the connection file to connect to your database configuration. 
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+### Installing
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/becoskie/php-auth/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Create a table for users in the database.
 
-### Support or Contact
+```
+users
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Create four fields for the user.
+
+```
+user_id int(12) AUTO_INCREMENT Set primary key
+```
+```
+username varchar(60)
+```
+```
+hashed_password varchar(60)
+```
+```
+user_type varchar(12)
+```
+
+
+
+## Built With
+
+* [MAMP](https://www.mamp.info/en/) - Local web development
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Kevin Skoglund - Php With My Sql Essential Training
+
+
